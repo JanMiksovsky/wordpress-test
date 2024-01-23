@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@weborigami/async-tree": "0.0.39",
+    "@weborigami/origami": "0.0.39"
+  }
+}
