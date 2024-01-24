@@ -39,14 +39,14 @@ function postsTree(site, authorization) {
     // Return the post object for the given ID.
     async get(id) {
       const query = `posts/${id}`;
-      const post = await wordpressFetch(site, query, authorization);
+      const post = await fetchWordPress(site, query, authorization);
       return post;
     },
 
     // Return the post IDs.
     async keys() {
       const query = "posts?_fields=id";
-      const posts = await wordpressFetch(site, query, authorization);
+      const posts = await fetchWordPress(site, query, authorization);
       const ids = posts.map((post) => post.id);
       return ids;
     },
@@ -60,7 +60,7 @@ function postsTree(site, authorization) {
  * @param {string} query
  * @param {string} authorization
  */
-async function wordpressFetch(site, query, authorization) {
+async function fetchWordPress(site, query, authorization) {
   const url = `${site}/wp-json/wp/v2/${query}`;
   const response = await fetch(url, {
     method: "GET",
