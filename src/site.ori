@@ -1,0 +1,4 @@
+@map(wp.js('agitated-clarke.165-227-195-229.plesk.page', creds.json), {
+  extensions: "→yaml"
+  valueMap: @yaml
+})
